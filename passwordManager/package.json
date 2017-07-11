@@ -1,0 +1,29 @@
+{
+  "name": "passwordManager",
+  "version": "1.0.0",
+  "description": "this is my first app 7/1/17",
+  "main": "./main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "index": {
+    "index": "index.html"
+  },
+  "author": "Zagorski32611",
+  "window": {
+    "toolbar": false,
+    "width": 800,
+    "height": 500
+  },
+  "license": "ISC",
+  "dependencies": {
+    "pretty-bytes": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zagorski32611/freeCodeStuff.git"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^1.4.13"
+  }
+}

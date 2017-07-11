@@ -1,0 +1,23 @@
+( TRUE || TRUE ) = TRUE
+( TRUE || FALSE ) = TRUE
+( FALSE || TRUE ) = TRUE
+( FALSE || FALSE ) = FALSE
+( TRUE && TRUE ) = TRUE
+( TRUE && FALSE ) = FALSE
+( FALSE && TRUE ) = FALSE
+( FALSE && FALSE ) = FALSE
+
+(question2 == "to seek the grail!" && "to win the game!")
+
+
+( (question2 == "to seek the grail!") && ("to win the game!") )
+( (TRUE) && (FALSE) )
+( (FALSE) )
+
+( (FALSE) && (FALSE) )
+( (FALSE) )
+
+
+( (question2 == "to seek the grail!") || (question2 == "to win the game!") )
+( (TRUE) || (FALSE) )
+( TRUE )

@@ -1,0 +1,198 @@
+<style>
+  .red-text {
+    color: red;
+  }
+
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+
+<p>Kitty ipsum dolor sit amet, shed everywhere shed
+  everywhere stretching attack your ankles chase the
+  red dot, hairball run catnip eat the grass sniff.</p>
+<== this is the basic program. We created a CSS Class called .red-text
+and we can call this class in any name h2, p etc.
+
+<style>
+  .red-text {
+    color: red;
+  }
+
+  p {
+    font-size: 16px;
+  }
+<!-- you can also name  -->
+<link href="https://fonts.googleapis.com/css?family=Lobster"
+rel="stylesheet" type="text/css">
+<!-- We imported this Google Font Package and used it in our element -->
+<style>
+  .red-text {
+    color: red;
+  }
+
+  h2 {
+    font-family: Lobster, Monospace;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: Monospace;
+  }
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+
+<p class="red-text">Kitty ipsum dolor sit amet,
+   shed everywhere shed everywhere stretching
+   attack your ankles chase the red dot, hairball
+    run catnip eat the grass sniff.</p>
+<p class="red-text">Purr jump eat the grass rip
+  the couch scratched sunbathe, shed everywhere
+  rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+<!-- We can also add and image in the page by using img followed by the url,
+However it MUST have an alt- this is used to
+
+<img src="https://bit.ly/fcc-relaxing-cat"
+alt="A cute orange cat lying on its back. "-->
+
+_____________________________________________________________________________
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+  .red-text {
+    color: red;
+  }
+
+  h2 {
+    font-family: Lobster, Monospace;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: Monospace;
+  }
+
+  .thick-green-border {
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+  } <!-- this is for dding a circle border around an image-->
+
+  .smaller-image {
+    width: 100px;
+  }
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+
+<p> View more <a href="http://www.freecatphotoapp.com">cat photos</a> </p>
+<!-- the a reference is for making a link with text, the words "cat photos"
+will be the blue link. If I don't where the link will go, I can use a hash tag
+so it won't cause problems.
+-->
+
+<!-- <a href='#'--><img class="smaller-image thick-green-border"
+src="https://bit.ly/fcc-relaxing-cat"
+alt="A cute orange cat lying on its back. "></a>
+<!-- you can nest an image in an anchor <a> to make the image a link-->
+
+<p class="red-text">Kitty ipsum dolor sit amet,
+  shed everywhere shed everywhere stretching attack your ankles
+  chase the red dot, hairball run catnip eat the grass sniff.</p>
+<p class="red-text">Purr jump eat the grass
+  rip the couch scratched sunbathe, shed everywhere rip the
+  couch sleep in the sink fluffy fur catnip scratched.</p>
+<!-- Unordered lists- these create a list that is not ordered.-->
+
+<p>Things cats love:</p>
+<ul>
+  <li>cat nip</li>
+  <li>laser pointers</li>
+  <li>lasagna</li>
+</ul>
+<!-- you can also make and ordered list -->
+<ol>
+  <li>flea treatment</li>
+  <li>thunder</li>
+  <li>other cats</li>
+</ol>
+<!-- You can build web forms that actually submit data to a server
+using nothing more than pure HTML.
+You can do this by specifying an action on your form element. -->
+<form action="/submit-cat-photo">
+  <input type="text" required placeholder="cat photo URL">
+  <button type = "Submit">Submit</button>
+</form>
+<!-- this will create a form, to input text! -->
+<!-- you can also add radio buttons: -->
+<form action="/submit-cat-photo">
+  <input type="text" placeholder="cat photo URL" required>
+  <button type="submit">Submit</button>
+</form>
+
+<!-- this will add radio buttons, this could be cool to vote -->
+<form action="/submit-cat-photo">
+  <label><input type="radio" name="indoor-outdoor"> Indoor</label>
+  <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+  <input type="text" placeholder="cat photo URL" required>
+  <button type="submit">Submit</button>
+</form>
+
+<!-- this is our completed webpage! -->
+<link href="https://fonts.googleapis.com/css?family=Lobster"
+rel="stylesheet" type="text/css">
+<style>
+  .red-text {
+    color: red;
+  }
+
+  h2 {
+    font-family: Lobster, Monospace;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: Monospace;
+  }
+
+  .thick-green-border {
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+  }
+
+  .smaller-image {
+    width: 100px;
+  }
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+
+<p>Click here for <a href="#">cat photos</a>.</p>
+
+<a href="#"><img class="smaller-image thick-green-border"
+src="https://bit.ly/fcc-relaxing-cat"
+alt="A cute orange cat lying on its back. "></a>
+
+<p>Things cats love:</p>
+<ul>
+  <li>cat nip</li>
+  <li>laser pointers</li>
+  <li>lasagna</li>
+</ul>
+<p>Top 3 things cats hate:</p>
+<ol>
+  <li>flea treatment</li>
+  <li>thunder</li>
+  <li>other cats</li>
+</ol>
+<form action="/submit-cat-photo">
+  <label><input type="radio" name="indoor-outdoor"> Indoor</label>
+  <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+  <label><input type="checkbox" name="personality"> Loving</label>
+  <label><input type="checkbox" name="personality"> Lazy</label>
+  <label><input type="checkbox" name="personality"> Crazy</label>
+  <input type="text" placeholder="cat photo URL" required>
+  <button type="submit">Submit</button>
+</form>

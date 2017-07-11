@@ -1,0 +1,50 @@
+function createPrompt(dialog) {
+  var response = prompt(dialog.question).toLowerCase();
+  if (!dialog.responses.hasOwnProperty(response)) {
+    alert(dialog.error);
+  } else {
+    alert(dialog.responses[response]);
+  }
+}
+
+function createGame(dialogs) {
+  dialogs.forEach(createPrompt);
+}
+
+first = {
+  question: "STOP! He who would cross the Bridge of Death must answer these questions 3... Proceed? (Yes or No)",
+  error: "I will assume that's a 'yes'!",
+  responses: {
+    "yes": "Go ahead Bridge Keeper, I am not afraid...",
+    "no": "Very well, Sir Robin."
+  }
+}
+
+second = {
+  question: "What is your name?",
+  error: "Question 2...",
+  responses: {
+    "sir lancelot": "Sir Lancelot, the Brave!"
+  }
+}
+
+third = {
+  question: "What is your quest?",
+  error: "Question 3...",
+  responses: {
+      "to seek the grail!": "Solid reference!",
+      "to win the game!": "Solid reference!"
+    }
+}
+
+fourth = {
+  question: "What is the air-speed velocity of an unladen swallow?!",
+  error: "You lose!",
+  responses: {
+    "an african or european swallow?": "AHHHHH you win!",
+    "with coconuts?": "AHHHHH you win!"
+  }
+}
+
+var prompts = [first, second, third, fourth];
+createGame(prompts);

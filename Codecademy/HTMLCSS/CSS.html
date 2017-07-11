@@ -1,0 +1,55 @@
+<!-- You learned that RGB and hex color
+codes are two different methods of
+representing the same thing: color.
+However, there is one feature that RGB
+colors support that hex color codes do not: opacity.
+
+Opacity is a measure of how transparent a color is.
+To modify opacity in RGB colors, CSS offers the rgba() value.
+Note the slight difference in rgb() and rgba().
+the first three in the set are the normal red, blue, green. The last
+decimal is a measure of opacity between 0 and 1, inclusive. -->
+<style>
+h1 {
+  color: rgba(123, 88, 9, 0.5);
+}
+
+
+
+
+<!-- many older browsers do not support rgba, HSL or HSLa. So always put a
+redundant color option -->
+h1 {
+  color: rgb(22, 34, 88);
+  color: rgba(22, 34, 88, 0.4);
+}
+
+</style>
+<!-- you can link to Google fonts to make sure that any browser supports
+the fonts you choose for your page: -->
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" type="text/css" rel="stylesheet" >
+</head>
+
+<!-- Text on a web page must also be easy to read. When text is styled to
+appear larger, the vertical spacing between lines of text can decrease,
+creating text that is difficult to read, particularly in paragraphs.
+
+To avoid this problem, you can modify the spacing between lines of
+text with the line-height property. -->
+<style>
+p {
+  line-height: 1.5em;
+}
+In CSS, the font-weight property turns bold on or off.
+
+p {
+  font-weight: bold;
+} <!-- makes stuff bold! -->
+h3 {
+  font-style: italic;
+} <!-- obviously makes stuff italic -->
+
+h1 {
+  text-transform: uppercase;
+} <!-- makes everything upper case! -->

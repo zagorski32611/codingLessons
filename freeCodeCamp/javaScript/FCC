@@ -1,0 +1,25 @@
+/* this a collection of notes from Free Code Camp
+.pop() is used to "pop" a value off of the end of an array. We can store this
+"popped off" value by assigning it to a variable.
+
+Any type of entry can be "popped" off of an array -
+numbers, strings, even nested arrays.
+it always takes the last value */
+
+
+var myArray = [["John", 23], ["cat", 2]];
+
+
+var removedFromMyArray = myArray.pop();
+
+// now, myArray = ["John", 23] and removedFromMyArray = ["cat", 2];
+
+var myArray = [["John", 23], ["dog", 3]];
+
+
+var removedFromMyArray = myArray.shift();
+// now myArray = ["dog", 3] and removedFromMyArray = ["John", 23];
+
+/*.unshift() works exactly like .push(), but instead of
+adding the element at the end of the array, unshift() adds the
+ element at the beginning of the array.*/

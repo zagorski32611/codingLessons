@@ -1,0 +1,108 @@
+<!-- A web browser must know what language a document is written 
+in before they can process the contents of the document.
+You can let web browsers know that you are using
+the HTML language by starting your HTML document
+with a document type declaration. -->
+
+<!DOCTYPE html>
+
+<!-- To begin adding HTML structure and content,
+we must first add opening and closing <html> tags, like so: -->
+<html>
+
+</html>
+
+<!-- the following is considered "boilerplate code". All these elements are
+considered 'best practice'. Every webpage should follow this design -->
+
+<!DOCTYPE html>
+<html>
+ <head>
+   <title> Learn HTML </title>
+  </head>
+  <body>
+
+  </body>
+</html>
+
+<!-- here's the code I wrote in codecademy -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animals Around the World</title>
+</head>
+<body>
+  <h1> The Brown Bear </h1>
+  <p>The brown bear (Ursus arctos) is native to parts of northern
+    Eurasia and North America. Its conservation status is currently
+    "Least Concern." There are many subspecies within the brown bear species,
+    including the Atlas bear and the Himalayan brown bear.</p>
+  <a href="https://en.wikipedia.org/wiki/Brown_bear">Learn more</a>
+  <!-- <a href="https://en.wikipedia.org/wiki/Brown_bear" target="_blank">
+  Learn more</a> You can use this to open the link in a new window! -->
+
+  <p> The following are subspecies of bears: </p>
+  <ul>
+    <li>Arctos </li>
+    <li>Collarus </li>
+    <li>Horribilis </li>
+    <li> Nelsoni (extinct)</li>
+  </ul>
+  <p> The following countries have the largest populations of brown bears: </p>
+  <ol>
+    <li>Russia </li>
+    <li>United States</li>
+    <li>Canada </li>
+
+  </ol>
+</body>
+</html>
+
+
+
+<!-- btw, the br tag is self closing! <br />
+
+<!-- CSS is actually a different language. But it can be used in an HTML file
+withing the <head> tag -->
+
+* {
+  font-family: 'Georgia', 'Times', serif;
+}
+<!-- this is for everything! ^^
+You can use the <link> element to link the HTML and CSS files together.
+ The <link> element must be placed within the head of the HTML file.
+ It is a self-closing tag and requires the following three attributes:
+
+href - like the anchor element, the value of this attribute must be the
+address, or path, to the CSS file.
+
+type - this attribute describes the type of document that you are linking
+to (in this case, a CSS file). The value of this attribute should be set
+to text/css.
+rel - this attribute describes the relationship between the HTML file and
+the CSS file. Because you are linking to a stylesheet, the value should
+be set to stylesheet. -->
+<link href="#filepath" type="text/css" rel="stylesheet">
+
+
+<!-- You can batch edit elements in CSS too and * selects ALL elements: -->
+<style>
+h1 {
+ color: FireBrick;
+
+}
+
+p {
+  font-size: 18px;
+}
+
+h1, p {
+  color: DarkSlateGray;
+}
+
+* {
+  font-family: Georgia;
+
+}
+
+</style>

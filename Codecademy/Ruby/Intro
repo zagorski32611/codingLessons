@@ -1,0 +1,192 @@
+# use the hash tag to comment!
+my_num = 25
+
+my_boolean = true
+
+my_string = "Ruby"
+
+# Ruby is case sensitive and don't use quotes around booleans
+
+# variables are easy! If you need to change it later, just type it in
+
+my_num = 100
+
+=begin all the basic math operators are here:
+#Addition (+)
+#Subtraction (-)
+#Multiplication (*)
+#Division (/)
+#Exponentiation (**)
+#Modulo (%)
+#Just type the expression in the line and run it:
+=end
+
+25 % 5
+
+=begin
+The print command just takes whatever you give it and prints it to the screen. puts (for "put string")
+is slightly different: it adds a new (blank) line after the thing you want it to print. You use them like this:
+=end
+puts "Where?"
+print "what up doe?"
+
+
+
+=begin Everything is an object!
+Because everything in Ruby is an object (more on this later),
+everything in Ruby has certain built-in abilities called methods.
+You can think of methods as "skills" that certain objects have.
+For instance, strings (words or phrases) have built-in methods that can tell
+you the length of the string, reverse the string, and more.
+
+We also promised to tell you more about the interpreter. The interpreter is
+the program that takes the code you write and runs it. You type code in the
+editor, the interpreter reads your code, and it shows you the result of running
+your code in the console (the bottom window on the right).
+=end
+
+#methods are summoned using a . for example:
+
+"zagorski".length
+
+#this one is cool:
+"zagorski".reverse
+
+#two more:
+
+puts "eric".upcase
+puts "JOE".downcase
+
+=begin
+sum equal to 13 + 379
+product equal to 923 * 15
+quotient equal to 13209 / 17
+=end
+
+#you can call a string on all seperate lines OR one after the other:
+name = "joe".downcase.reverse.upcase
+
+name = "joe".downcase
+.reverse
+
+.upcase
+
+
+
+#this is single line
+
+
+=begin
+this
+is
+multiline
+=end
+
+
+print "What's your first name?"
+first_name = gets.chomp
+print "What's your last name?"
+last_name = gets.chomp
+print "What city are you from?"
+city = gets.chomp
+print "What state are you from? Use the abbreviation for your state"
+state = gets.chomp.upcase
+=begin
+this is my first program. the gets.chomp asks the user for input and the
+chomp cuts off the extra line that would be made without it.
+Each user input is then stored in the variable.
+=end
+
+
+
+=begin
+string interpolation: you us #{name_of_var}
+=end
+
+first_name = "Joe"
+puts "my first name is #{first_name}."
+
+last_name = "Zagorski"
+puts "my last name is #{last_name}"
+city = "Cleveland"
+state = "AL"
+puts "I am from #{city}, #{state}"
+
+first_name = "joe"
+puts "my first name is #{first_name}."
+first_name.capitalize
+
+#you can also use .capitalize on the end of variables:
+
+first_name = "joe".capitalize!
+puts "my first name is #{first_name}."
+
+last_name = "zagorski".capitalize!
+puts "my last name is #{last_name}"
+city = "cleveland".capitalize!
+puts "I am from #{city}"
+
+state = "oh".upcase!
+puts "I am from #{state}"
+
+
+# Comparisons elsif (notice, it's not ELSEIF)
+if 2 * 2 < 5
+    print "I made a true lol"
+elsif
+    print "the world is burning"
+else
+    print "I can't maths"
+end
+
+# You can also test if something is false with unless
+
+hungry = false
+
+unless
+ puts "I'm writing Ruby programs!"
+else
+ puts "Time to eat!"
+end
+
+#Also have comparitors:
+is_true = 2 != 3
+
+is_false = 2 == 3
+
+test_1 = 17 > 16
+
+test_2 = 21 < 30
+
+test_3 = 9 <= 9
+
+test_4 = -11 <= 4
+
+
+=begin
+Home stretch! Let's go over boolean operators.
+
+( 1 == 1 ) && ( 2 == 2 )  // true
+( 1 == 2 ) || ( 2 == 2 ) // true
+!( false ) // true
+With && both comparisons on the left and right must evaluate to true for the entire statement to return true. If the left side does not return true it will not bother trying the right side
+with || either the right or left side must evaluate to true. If the left side evaluates to true, the right side will not be tried because it has met the condition of one side being true.
+! does the opposite. If you're false you're now true. if you're true you're now false! Just think of it as opposite day!
+=end
+
+
+print "Thtring, pleathe!: "
+user_input = gets.chomp
+user_input.downcase!
+
+if user_input.include? "s"
+  user_input.gsub!(/s/, "th")
+else
+  puts "Nothing to do here!"
+end
+
+puts "Your string is: #{user_input}"
+
+
+
+00

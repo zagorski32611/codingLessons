@@ -1,0 +1,87 @@
+<!-- Bootstrap will figure out how
+wide your screen is and respond by
+resizing your HTML elements - hence the name Responsive Design.
+With responsive design, there is no
+need to design a mobile version of your website.
+It will look good on devices with screens of any width.
+You can add Bootstrap to any app by adding the following code
+to the top of your HTML:
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+
+We're going to start exercises using bootstrap and build on our cat photo app: -->
+
+<div class=container-fluid> <!-- we added this to our div elemt at the top -->
+ <h2 class="red-text text-center">CatPhotoApp</h2> <!-- multiple classes have a
+   space between them in the "". This centers out header -->
+
+  <img src="https://bit.ly/fcc-running-cats"
+  class="img-responsive"
+  alt="Three kittens running towards the camera. ">
+  <!-- this will make the picture adjust to the width of the screen -->
+  <button class="btn btn-block btn-primary">Like</button>
+ <!-- this creates a button with whatever text I want. the btn-block class makes
+it as wide as the screen and the button primary -->
+<button class="btn btn-block btn-info">Info </button>
+<!-- The btn-info class is used to call attention to optional
+actions that the user can take. -->
+<button class="btn btn-block btn-danger">Delete</button>
+<!-- The btn-danger class is the button color you'll
+use to notify users that the button performs a destructive action,
+such as deleting a cat photo. -->
+
+<!-- we can make a simple grid system with <div class="row" col-md-*> in our div element.
+This is colums - medium - # of colums. Medium spcifies the size of the screen! -->
+
+<!-- we can also put all of our buttons in a row by giving them their own div element-->
+<div class="row">
+    <div class="col-xs-4">
+  <button class="btn btn-block btn-primary">Like</button>
+    </div>
+      <div class="col-xs-4">
+  <button class="btn btn-block btn-info">Info</button>
+    </div>
+        <div class="col-xs-4">
+  <button class="btn btn-block btn-danger">Delete</button>
+    </div>
+
+<!-- By using the span element, you can put several elements together,
+and even style different parts of the same element differently.
+Below, I used it to put the header and image next to each other, note how the
+image resizes itself!-->
+
+  <div class="row">
+    <div class = "col-xs-8">
+  <h2 class="text-primary text-center">CatPhotoApp</h2>
+    </div>
+    <div class = "col-xs-4">
+  <a href="#"><img class="img-responsive thick-green-border"
+    src="https://bit.ly/fcc-relaxing-cat"
+    alt="A cute orange cat lying on its back. "></a>
+    </div>
+  </div>
+<!-- the most important part is that to start, theres a <div> and the each
+element on the row ALSO gets a div element -->
+<!-- You can add an element within an element. For example, to put a font
+awesome paper plane IN my submit button, this is the code: -->
+<input type="text" class="form-control" placeholder="cat photo URL" required>
+<button type="submit" class="btn btn-primary">
+<i class="fa fa-paper-plane"></i> Submit</button>
+<!-- the i class is contained in the button element.
+notice how it's just <i clas"xxx"></i> Submit</button>?
+That's a nested element in an element.-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
