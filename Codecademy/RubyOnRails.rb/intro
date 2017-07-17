@@ -1,0 +1,11 @@
+=begin
+Let's get started by making a Rails app for a personal website. We'll explain each step in the next exercise.
+
+In the terminal, type
+
+$ rails new MySite
+=end
+
+rails new MySite
+bundle install
+rails server

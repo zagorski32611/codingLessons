@@ -540,3 +540,7 @@ class Computer
 end
 
 my_computer = Computer.new("Hal", "123") #this is a username and password!
+
+pnc = Computer.new("zagorski32611", "mk6Jetta")
+fdkgdsjflkgjds;lfkgj sldf;fkjgl;sdkjg klfgj s
+puts users
