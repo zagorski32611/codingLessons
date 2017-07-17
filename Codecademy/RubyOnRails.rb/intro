@@ -9,3 +9,41 @@ $ rails new MySite
 rails new MySite
 bundle install
 rails server
+
+=begin
+In three commands, you built a working Rails app that displays the Rails default page. How does it work?
+
+The rails new command created a new Rails app named MySite. It generated a number of files and folders that we will use to build the app.
+ In the Code Editor, click on the folder icon  to see these files and folders. We'll see what these files and
+ folders are for in the next exercises. The rails new command is the starting point of every Rails project.
+The bundle install command installed all the software packages needed by the new Rails app. These software packages
+are called gems and they are listed in the file Gemfile.
+The rails server command started the Rails development server so that we could preview the app in the browser by
+visiting http://localhost:8000. This development server is called WEBrick.
+=end
+
+=begin
+What happens when you visit http://localhost:8000 in the browser? Check out the diagram in the browser.
+
+The browser makes a request for the URL http://localhost:8000.
+The request hits the Rails router in config/routes.rb. The router recognizes the URL and sends the request to the controller.
+The controller receives the request and processes it.
+The controller passes the request to the view.
+The view renders the page as HTML.
+The controller sends the HTML back to the browser for you to see.
+This is called the request/response cycle. It's a useful way to see how a Rails app's files and folders fit together.
+Instructions
+1.
+Looking at the request/response cycle, we need three parts to build a Rails app: a controller, a route, and a view. Let's start here by creating a controller.
+
+In the terminal, type:
+=end
+
+rails generate controller Pages
+
+#After rails generate finishes running, in the Code Editor, open app/controllers/pages_controller.rb. Within the class PagesController, add a method home:
+
+class PagesController < ApplicationController
+  def home
+  end
+end
