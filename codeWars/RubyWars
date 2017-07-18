@@ -1,0 +1,15 @@
+def is_square(x)
+  if x.is_square
+    true
+  else false
+end
+end
+
+
+
+def is_square(x)
+  if Math.sqrt(x).is_a? Integer
+   true
+ else false
+ end
+ end
