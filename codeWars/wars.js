@@ -111,7 +111,7 @@ var isSquare = function(n) {
     return true;
   }
 }
-isSquare(8);
+isSquare("rice");
 isSquare(5);
 isSquare(2);
 isSquare(100);

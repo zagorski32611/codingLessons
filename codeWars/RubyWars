@@ -1,15 +1,15 @@
 def is_square(x)
-  if x.is_square
-    true
-  else false
+  if Math.sqrt(x) % 1 != 0
+    false
+  else true
+  end
 end
-end
+puts is_square(6)
+puts is_square(36)
+puts is_square("rice")
 
-
+# this is the correct answer:
 
 def is_square(x)
-  if Math.sqrt(x).is_a? Integer
-   true
- else false
- end
- end
+  x < 0 ? false : Math.sqrt(x) % 1 == 0
+end
