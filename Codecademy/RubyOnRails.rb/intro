@@ -102,3 +102,44 @@ Create a view with HTML and CSS.
 Run the local web server and preview the app in the browser.
 
 =end
+
+
+
+
+This is good to know:
+What did we just do?
+
+We created two models named Tag and Destinations.
+In the model files, we used the methods has_many and belongs_to define an association between Tag and Destination:
+
+has_many :destinations denotes that a single Tag can have multiple Destinations.
+belongs_to :tag denotes that each Destination belongs to a single Tag.
+The has_many / belongs_to pair is frequently used to define one-to-many relationships. A few examples are:
+
+a Library has many Books; a Book belongs to a Library
+an Album has many Photos; a Photo belongs to an Album
+a Store has many Products; a Product belongs to a Store
+Instructions
+1.
+Now that there's an association between Tag and Destination, let's continue and add columns to the migration files.
+
+Open the migration file in db/migrate/ for the tags table, and add the following columns:
+
+a string column called title
+a string column called image
+
+
+
+
+Nicely done! You can now update a destination's name and description. How does it work?
+
+When you visit http://localhost:8000/destinations/1/edit to edit a destination, it triggers the first turn of the request/response cycle:
+
+The browser makes a HTTP GET request for the URL /destinations/1/edit.
+The Rails router maps this URL to the Destinations controller's edit action. The edit action finds the destination with id 1, stores it in @destination, and passes it on to the view app/views/destinations/edit.html.erb.
+In the view, form_for creates a form with the fields of the @destinations object.
+Then when you fill out the form and submit it, it triggers the second turn of the request/response cycle:
+
+The browser sends the data to the Rails app via an HTTP POST request to the URL /destinations/update.
+This time, the Rails router maps this URL to the update action.
+The update uses the destination_params method to safely collect data from the form. It finds the destination in the database, updates its attributes, and redirects to the destination's show page.

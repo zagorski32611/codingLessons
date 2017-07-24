@@ -13,3 +13,99 @@ puts is_square("rice")
 def is_square(x)
   x < 0 ? false : Math.sqrt(x) % 1 == 0
 end
+
+
+#Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 integers. No floats or empty arrays will be passed.
+# For example, when an array is passed like [19,5,42,2,77], the output should be 7.
+# [10,343445353,3453445,3453545353453] should return 3453455.
+# Hint: Do not modify the original array.
+
+
+numbers = [19,5,42,2,77]
+
+puts numbers
+
+def sum_two_smallest_numbers(numbers)
+  puts numbers.sort[0] + numbers.sort[1]
+end
+sum_two_smallest_numbers([19,5,42,2,77])
+
+puts numbers
+
+=begin
+#Triple Trouble
+
+Create a function that will return a string that combines all of the letters of the three inputed strings in groups. Taking the first letter of all of the inputs and grouping them next to each other. Do this for every letter, see example below!
+
+Ex) Input: "aa", "bb" , "cc" => Output: "abcabc"
+
+Note: You can expect all of the inputs to be the same length.
+=end
+
+def triple_trouble(one, two, three)
+  puts one.chars.sort.join + two.chars.sort.join + three.chars.sort.join
+end
+
+puts triple_trouble('aaa', 'bbb', 'ccc')
+
+
+
+def triple_trouble(one, two, three)
+   com = (one + two + three)
+  puts com.chars.sort
+end
+print triple_trouble('aaa', 'bbb', 'ccc')
+
+
+# this is the answer:
+def triple_trouble(one, two, three)
+  one.chars.zip(two.chars, three.chars).join("")
+end
+print triple_trouble('aaa', 'bbb', 'ccc')
+
+=begin
+You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+#Examples:
+
+Kata.getMiddle("test") should return "es"
+
+Kata.getMiddle("testing") should return "t"
+
+Kata.getMiddle("middle") should return "dd"
+
+Kata.getMiddle("A") should return "A"
+=end
+
+
+def get_middle(s)
+  #your code here
+end
+
+
+# this works for odd numbered strings!
+def get_middle(s)
+ var = s.length / 2
+ puts s[var]
+end
+
+get_middle("three")
+
+def get_middle(s)
+  if s.length.odd?
+    var = s.length / 2
+    puts s[var]
+  else
+    puts s[((s.length - 1) / 2) , ((s.length + 1) / 2) / 2]
+  end
+end
+
+get_middle("four")
+get_middle("testing")
+
+# I think it should be like this
+def median(array)
+  sorted = array.sort
+  len = sorted.length
+  (sorted[(len - 1) / 2] + sorted[len / 2]) / 2.0
+end
