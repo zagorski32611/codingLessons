@@ -157,3 +157,163 @@ Use the Rails console to retrieved all signed up users again.
 4.
 Exit the Rails console by typing exit.
 =end
+
+
+=begin
+Login I
+Now that users can sign up for a new account, let's add the ability to log in and log out of the app. Using the request/response cycle as a guide again, here's how logging in and logging out fits in.
+
+Turn one:
+
+When the user visit the login page, the browser makes a GET request for the URL /login.
+The Rails router maps the URL /login to the Sessions controller's new action. The new action handles the request and passes it on to the view.
+The view displays the login form.
+Turn two:
+
+When the user fills in and submits the form, the browser sends the data via a POST request to the app.
+The router maps the request to the Sessions controller's create action.
+The create action verifies that the user exists in the database. If the user exists, the create action logs the user in by creating a new session. Otherwise, it reloads the login page.
+Instructions
+1.
+Let's begin by adding a login page. Looking at the request/response cycle, we need five parts to add login machinery to the app: a model, a controller, routes, views, and logic for sessions. As we already created the User model when building the signup page, let's start here by creating a controller.
+
+Generate a controller named Sessions.
+2.
+In the routes file, create a route that maps requests for the URL '/login' to the Sessions controller's new action.
+3.
+In the Sessions controller, add the new action
+
+def new
+end
+4.
+Then in app/views/sessions/new.html.erb, on line 7, use form_for to create a login form:
+
+<%= form_for(:session, url: login_path) do |f| %>
+  <%= f.email_field :email, :placeholder => "Email" %>
+  <%= f.password_field :password, :placeholder => "Password" %>
+  <%= f.submit "Log in", class: "btn-submit" %>
+<% end %>
+We've also provided CSS in app/assets/css/application.css.
+5.
+Restart the Rails server and visit http://localhost:8000/login in the browser.
+
+The form won't work just yet. We'll finish it up next.
+=end
+
+
+
+=begin
+Login II
+Well done!
+
+When you visit the URL /login, the browser makes a GET request for the URL. This request hits the Sessions controller's new action, which returns a view displaying the login page.
+In the login form, we use form_for(:session, url: login_path) do |f|. This refers to the name of the resource and corresponding URL. In the signup form, we used form_for(@user) do |f| since we had a User model. For the login form, we don't have a Session model, so we refer to the parameters above.
+Instructions
+1.
+Next, let's take in data submitted through the form and log the user in by starting a new session.
+
+In the routes file, create a route that maps the URL '/login' to the Sessions controller's create action.
+
+post 'login' => 'sessions#create'
+2.
+In the Sessions controller, add the create action
+
+def create
+  @user = User.find_by_email(params[:session][:email])
+  if @user && @user.authenticate(params[:session][:password])
+    session[:user_id] = @user.id
+    redirect_to '/'
+  else
+    redirect_to 'login'
+  end
+end
+3.
+Visit http://localhost:8000/login and log in with your email and password.
+
+LOGOUT!
+Logout
+Nice job! Now when you fill in the login form and submit it, the data is sent to the Rails app via a POST request. The request hits the Sessions controller's create action. The create action checks whether your email and password exist in the database, creates a new session, and redirects to the albums page.
+Instructions
+1.
+Now that users can log in, let's add the ability to log out.
+
+In the routes file, create a route that maps the URL /logout to the Sessions controller's destroy action:
+
+delete 'logout' => 'sessions#destroy'
+2.
+In the Session controller, add the destroy action by setting the session hash to nil and redirecting to the root path
+
+def destroy
+  session[:user_id] = nil
+  redirect_to '/'
+end
+=end
+=begin
+current_user
+Great work so far! We've built an authentication system that lets new users sign up for the site, and lets existing users log in and out.
+
+However, there's one problem - even after you log out, you can still access the albums page. Why does this happen? Let's look at the request/response cycle:
+
+Currently when a user visits the URL /albums, the browser first makes a request for that URL.
+The request hits the Rails router.
+The router sends the request to the Albums controller's index action regardless of whether a user is logged in.
+What we want instead is for only users who are logged in to see the albums page; otherwise they should be redirected to the login page. This means that we need to check whether a user is logged in before sending her request on to the Albums controller's index action. Let's see how to do this.
+Instructions
+1.
+In app/controllers/application_controller.rb, add a method named current_user
+
+helper_method :current_user
+
+def current_user
+  @current_user ||= User.find(session[:user_id]) if session[:user_id]
+end
+2.
+Below current_user, add another method named require_user:
+
+def require_user
+  redirect_to '/login' unless current_user
+end
+=end
+=begin
+Filters
+How do these methods work?
+
+The current_user method determines whether a user is logged in or logged out. It does this by checking whether there's a user in the database with a given session id. If there is, this means the user is logged in and @current_user will store that user; otherwise the user is logged out and @current_user will be nil.
+The line helper_method :current_user makes current_user method available in the views. By default, all methods defined in Application Controller are already available in the controllers.
+The require_user method uses the current_user method to redirect logged out users to the login page.
+Here's more on the ||= syntax. Here's more on the unless keyword.
+Instructions
+1.
+Let's use require_user in the Albums controller in order prevent logged out users from accessing these pages. In the Albums controller, add this as the first line inside the class:
+
+before_action :require_user, only: [:index, :show]
+The before_action command calls the require_user method before running the index or show actions.
+2.
+Let's use current_user in application layout to update the nav items depending on whether a user is logged in or out. In app/views/layouts/application.html.erb, within <div class="nav pull-right"> on line 21 add:
+
+<% if current_user %>
+  <ul>
+    <li><%= current_user.email %></li>
+    <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+  </ul>
+<% else %>
+  <ul>
+    <li><%= link_to "Login", 'login' %></a></li>
+    <li><%= link_to "Signup", 'signup' %></a></li>
+  </ul>
+<% end %>
+3.
+Log out of the app, and then visit http://localhost:8000/albums in the browser. You should be be redirected to the login page.
+4.
+Log in to the app with your email and password, and then visit http://localhost:8000/albums. You should now be able to access it.
+
+Generalizations
+Congratulations! You built an authentication system from scratch. What can we generalize so far?
+
+An authentication system is made up of sign up, log in, log out functionality.
+The password_digest column and has_secure_password method are provided by bcrypt to store passwords securely.
+A session begins when a users logs in, and ends when a user logs out.
+The current_user method allow us to access the current user; require_user redirects to the root of the app if there is no such user.
+Before actions act as filters. They call methods before executing controller actions.
+
+=end
