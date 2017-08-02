@@ -96,16 +96,47 @@ def get_middle(s)
     var = s.length / 2
     puts s[var]
   else
-    puts s[((s.length - 1) / 2) , ((s.length + 1) / 2) / 2]
+    puts s[((s.length - 1))  , ((s.length + 1))]
   end
 end
 
-get_middle("four")
-get_middle("testing")
 
-# I think it should be like this
-def median(array)
-  sorted = array.sort
-  len = sorted.length
-  (sorted[(len - 1) / 2] + sorted[len / 2]) / 2.0
+# This is the correct one
+def get_middle(s)
+  puts s[(s.size-1)/2..s.size/2]
+end
+
+get_middle("Narcotic")
+get_middle("test")
+get_middle("testing")
+get_middle("middle")
+get_middle("A")
+get_middle("of")
+
+=begin
+Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
+
+Don't change the order of the elements that are left.
+
+Examples
+
+remove_smallest([1,2,3,4,5]) = [2,3,4,5]
+remove_smallest([5,3,2,1,4]) = [5,3,2,4]
+remove_smallest([2,2,1,2,1]) = [2,2,2,1]
+=end
+
+def remove_smallest(numbers)
+  numbers.delete(numbers.min)
+  numbers
+end
+
+puts remove_smallest  ([5,3,2,1,4])
+puts remove_smallest([2,2,1,2,1])
+
+
+n
+
+
+def remove_smallest(numbers)
+  throw NotImplementedError.new "TODO: remove_smallest"
 end
